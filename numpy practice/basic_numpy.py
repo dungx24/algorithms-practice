@@ -12,6 +12,7 @@
 # What is the passenger number of the oldest passenger? Who is the youngest?
 # What is the percentage of folks that survived?
 # What is the percentage of the folks that survived based on their passenger class?
+# Average age of survival and non-survival
 
 import numpy as np  
 passengers = np.array([
@@ -74,11 +75,16 @@ print("The youngest one is at seat: ", passengers[passengers[:,3] == min(passeng
 print("Number of survival: ", np.sum(passengers[:1]))
 
 classes = passengers[:, 2]
-survived = passengers[:, 1]
+survived = (passengers[:, 1] == 1)
+not_survived = (passengers[:, 1] == 0)
 for i in [1, 2, 3]:
 	class_passengers = passengers[passengers[:,2] == i]
 	survival_rate = np.average(class_passengers[:, 1])*100
 	print(f"Class {i}: {survival_rate:.2f}% survived")
+
+
+print("Average age of survival: ", np.round(np.average(passengers[:, 3][survived])))
+print("Average age of non-survival: ", np.round(np.average(passengers[:, 3][not_survived])))
 
 	
 
