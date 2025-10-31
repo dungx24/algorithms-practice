@@ -1,3 +1,18 @@
+#Below is an array (passengers) filled with real data from 50 of the passengers:
+
+# Passenger id (1 to 50)
+# Survived: 0 for no and 1 for yes.
+# Passenger class: 1 for Upper, 2 for Middle, 3 for Lower.
+# Age: 0-74
+
+# Your job as a data analyst is to find the following information:
+
+# What is the shape of this array?
+# What is the average age of the passengers?
+# What is the passenger number of the oldest passenger? Who is the youngest?
+# What is the percentage of folks that survived?
+# What is the percentage of the folks that survived based on their passenger class?
+
 import numpy as np  
 passengers = np.array([
    [1, 0, 3, 22],
